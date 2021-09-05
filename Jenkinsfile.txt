@@ -1,0 +1,34 @@
+pipeline 
+{
+	agent any
+	tools {nodejs "node"}
+	
+	stages 
+	{
+		stage('Git') 
+		{
+			steps{ git branch: 'main', url:'https://github.com/IngCarlosTorres/practica3' }
+		}	
+	
+		stage('Install')
+		{
+			steps{ bat 'npm install --force' } 
+		}
+		
+		stage('Test')
+		{
+			steps{ bat 'npm run test:ci' }
+		}
+		
+		stage('Build')
+		{
+			steps{ bat 'npm run ng build --configuration="production" --optimization --build-optimizer' }
+		}
+
+		stage('Deploy')
+		{
+			steps{ bat 'robocopy dist/practica3 C:/nginx-1.20.1/html /E & EXIT /B 0'}
+		}
+	
+	}
+}

@@ -1,0 +1,7 @@
+.background {
+    width: 100%;
+    height: 50vmax;
+    background: url('../assets/media/fondo.png') no-repeat;
+    background-size: cover;
+    color:black;
+ }
