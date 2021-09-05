@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
 
   mensaje(): void {
     Swal.fire({
-      title: 'HOLA AUX De SA Como estas? \n ESTA ES MI PRACTICA 3 \n SOY CARLOS TORRES - 201504240',
+      title: 'HOLA AUX MARIO \n ESTA ES MI PRACTICA 3 \n SOY CARLOS TORRES - 201504240',
       width: 600,
       padding: '3em',
       background: '#fff url(../assets/media/trees.png)',
